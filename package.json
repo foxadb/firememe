@@ -1,0 +1,29 @@
+{
+  "name": "firememe",
+  "version": "1.0.0",
+  "description": "Meme Contest using Firebase",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --mode development --open --hot",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foxadb/firememe.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "@babel/preset-react": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "html-webpack-plugin": "^5.1.0",
+    "webpack": "^5.22.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
