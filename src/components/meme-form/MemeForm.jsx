@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { fileToBase64 } from '../../services/file';
-import { createMeme } from '../../services/store';
+import { getMemeCollection } from '../../services/store';
 import './MemeForm.css';
 
 export class MemeForm extends Component {
@@ -25,7 +25,7 @@ export class MemeForm extends Component {
 
     sendMeme(event) {
         fileToBase64(this.state.file).then(base64File => {
-            createMeme({
+            getMemeCollection().add({
                 author: this.state.author,
                 date: new Date(),
                 file: base64File

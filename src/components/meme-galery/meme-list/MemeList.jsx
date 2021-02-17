@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getMemes } from '../../../services/store';
+import { getMemeCollection } from '../../../services/store';
 import { MemeDoc } from '../meme-doc';
 import './MemeList.css';
 
@@ -12,7 +12,7 @@ export class MemeList extends Component {
     }
 
     componentDidMount() {
-        getMemes().then(snapshot => {
+        getMemeCollection().onSnapshot(snapshot => {
             const memes = snapshot.docs.map(doc => {
                 const meme = doc.data();
                 return {
@@ -23,8 +23,6 @@ export class MemeList extends Component {
                 };
             });
             this.setState({ memes });
-        }).catch(error => {
-            console.error('Error when loading memes', error);
         });
     }
 
@@ -32,7 +30,8 @@ export class MemeList extends Component {
         return (
             <div className="list">
                 {this.state.memes.map(meme => (
-                    <div className="element">
+                    <div key={meme.id}
+                         className="element">
                         <MemeDoc meme={meme} />
                     </div>
                 ))}
