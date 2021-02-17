@@ -48,12 +48,14 @@ export class MemeForm extends Component {
                         <input type="text"
                                placeholder="Thomas"
                                value={this.state.author}
-                               onChange={this.changeAuthor} />
+                               onChange={this.changeAuthor}
+                               required />
                     </div>
                 </div>
                 <div className="form-group">
                     <input type="file"
-                           onChange={this.changeFile} />
+                           onChange={this.changeFile}
+                           required />
                 </div>
                 <div className="form-group">
                     <input type="submit"
