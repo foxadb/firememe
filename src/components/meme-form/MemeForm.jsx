@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { fileToBase64 } from '../../services/file';
 import { createMeme } from '../../services/store';
+import './MemeForm.css';
 
 export class MemeForm extends Component {
     constructor(props) {
@@ -41,24 +42,22 @@ export class MemeForm extends Component {
     render() {
         return (
             <form onSubmit={this.sendMeme}>
-                <div>
-                    <label>Your name</label>
-                    <input type="text"
-                        placeholder="Thomas"
-                        value={this.state.author}
-                        onChange={this.changeAuthor}
-                    ></input>
+                <div className="form-group">
+                    <label>Author</label>
+                    <div>
+                        <input type="text"
+                               placeholder="Thomas"
+                               value={this.state.author}
+                               onChange={this.changeAuthor} />
+                    </div>
                 </div>
-                <div>
-                    <label>Select your meme</label>
+                <div className="form-group">
                     <input type="file"
-                        onChange={this.changeFile}
-                    ></input>
+                           onChange={this.changeFile} />
                 </div>
-                <div>
+                <div className="form-group">
                     <input type="submit"
-                        value="Send"
-                    ></input>
+                           value="Submit" />
                 </div>
             </form>
         );

@@ -1,0 +1,9 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.element {
+    flex-basis: 320px;
+    margin: 32px;
+}

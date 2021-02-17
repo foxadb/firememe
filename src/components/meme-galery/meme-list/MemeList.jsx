@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { getMemes } from '../../services/store';
+import { getMemes } from '../../../services/store';
+import { MemeDoc } from '../meme-doc';
+import './MemeList.css';
 
 export class MemeList extends Component {
     constructor(props) {
@@ -28,22 +30,11 @@ export class MemeList extends Component {
 
     render() {
         return (
-            <div>
+            <div className="list">
                 {this.state.memes.map(meme => (
-                    <ul key={meme.id}>
-                        <li>
-                            <span>{meme.id}</span>
-                        </li>
-                        <li>
-                            <span>{meme.author}</span>
-                        </li>
-                        <li>
-                            <span>{meme.date}</span>
-                        </li>
-                        <li>
-                            <img src={meme.file} />
-                        </li>
-                    </ul>
+                    <div className="element">
+                        <MemeDoc meme={meme} />
+                    </div>
                 ))}
             </div>
         );
