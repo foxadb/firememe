@@ -1,3 +1,9 @@
 .form-group {
     margin: 32px;
 }
+
+.error {
+    padding: 16px;
+    border: 1px dashed #ff0000;
+    color: #ff0000;
+}
